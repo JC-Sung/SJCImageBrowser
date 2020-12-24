@@ -14,21 +14,21 @@ HXPhotoPicker完全可以用HXPhotoPreviewViewController来预览图片，但我
 
 
 ```objective-c
-SJCImageBrowser *previewVC = [[SJCImageBrowser alloc] initWithImages:imagesArry andCurrentIndex:index];
-    previewVC.hideOrginView = YES;//预览大图时，是否隐藏源视图
-    previewVC.transitionNeedPop = YES;//预览大图时，师傅需要pop动画
-    previewVC.disableaPersentInteractiveTransition = NO;//预览大图时，是禁用手势返回
+SJCImageBrowser *browser = [[SJCImageBrowser alloc] initWithImages:imagesArry andCurrentIndex:index];
+    browser.hideOrginView = YES;//预览大图时，是否隐藏源视图
+    browser.transitionNeedPop = YES;//预览大图时，师傅需要pop动画
+    browser.disableaPersentInteractiveTransition = NO;//预览大图时，是禁用手势返回
     
     // 跳转预览界面时动画起始的view
-    previewVC.customPreviewFromView = ^UIView *(NSInteger currentIndex) {
+    browser.customPreviewFromView = ^UIView *(NSInteger currentIndex) {
        
     };
     // 跳转预览界面时展现动画的image
-    previewVC.customPreviewFromImage = ^UIImage *(NSInteger currentIndex) {
+    browser.customPreviewFromImage = ^UIImage *(NSInteger currentIndex) {
         
     };
     // 退出预览界面时终点view
-    previewVC.customPreviewToView = ^UIView *(NSInteger currentIndex) {
+    browser.customPreviewToView = ^UIView *(NSInteger currentIndex) {
         
     };
-    [self presentViewController:previewVC animated:YES completion:nil];
+    [self presentViewController:browser animated:YES completion:nil];
